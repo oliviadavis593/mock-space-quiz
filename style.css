@@ -1,0 +1,32 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    background: url(images/space-background.jpg) no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
+
+/*===================*/
+    /*Main Container*/
+/*===================*/
+
+.box{
+    border: 1px solid #fff;
+    width: 700px;
+    height: 700px;
+}
+
+.space-gif {
+    border: 1px solid #fff;
+    width: 450px;
+    height: 450px;
+}
+
+h1 {
+    font-size: 35px;
+    color: #fff;
+}

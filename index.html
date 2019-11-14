@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Space Quiz</title>
+        <meta charset="utf-8">
+        <meta name="description" type="A quiz that tests your knowledge about space facts">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="style.css">
+    </head>
+    <body>
+
+    <main>
+            <!--Logo and scoring section-->
+            <header role="banner" class="header">
+                <section>
+                    <a href="index.html">
+                        <img class="space-logo" src="images/space-logo.png" alt="vector image">
+                    </a>
+                </section>
+                <section>
+                    <ul>
+                        <li class="sizeMe">QUESTION:
+                            <span class="questionNumber">0</span>
+                            /10
+                        </li>
+                        <li class="sizeMe">SCORE:
+                            <span class="score">0</span>
+                        </li>
+                    </ul>
+                </section>
+            </header>
+
+            <!--Intro Page Section-->
+        <section role="region" class="spaceBox">
+            <section class="spaceQuiz box" >
+                <h1>How much do you know about space science?</h1>
+                <img class="space-gif" src="https://media.giphy.com/media/3ohzAN9PzGgxpQaiM8/giphy.gif" alt="colorful space gif">
+                <button type="button" class="startButton button">Start Quiz</button>
+            </section>
+
+            <!--Question Section-->
+            <section class="questionBox box altBox">
+                <form>
+                    <fieldset>
+                        <legend class="questionText"></legend>
+                            <label class="sizeMe" for="0">
+                                <input class="radio" type="radio" id="0" value="" name="answer" required="">
+                                
+                            </label>
+                            <label class="sizeMe" for="1">
+                                <input class="radio" type="radio" id="1" value="" name="answer" required="">
+                                
+                            </label>
+                            <label class="sizeMe" for="2">
+                                <input class="radio" type="radio" id="2" value="" name="answer" required="">
+                                
+                            </label>
+                            <label class="sizeMe" for="3">
+                                <input class="radio" type="radio" id="3" value="" name="answer" required="">
+                                
+                            </label>
+                        <button type="submit" class="submitButton button">Submit</button>
+                    </fieldset>
+                </form> 
+            </section>
+
+            <!--Correct Answer Feedback page-->
+            <section class="response box altBox" >
+                <img class="goodjob-gif" src="https://media.giphy.com/media/wue4QtxncWuE8/giphy.gif" alt="Sailor Moon well done gif">
+                <h3>Brilliant!</h3>
+                <p class="sizeMe">You are brighter than a star!</p>
+                <button id="js-next-button">Next</button>
+                 
+            </section>
+
+            <!--Incorrect Answer Feedback page-->
+            <section class="response box altBox">
+                <img class="explosion-gif" src="https://media.giphy.com/media/cN34n6Ka8GrcY/giphy.gif" alt="Planet explosion gif">
+                <h3>Wrong!</h3>
+                <p class="sizeMe">The correct answer is:</p>
+                <p class="sizeMe"></p>
+                <button id="js-next-button">Next</button>
+                
+            </section>
+
+            <!--Final Results Section-->
+            <section class="final box altBox" style>
+                    <h3></h3>
+                    <img src="${array[1]}" alt="${array[2]}" class="images">
+                    <h3>Your score is ${score} / 10</h3>
+                    <p class="sizeMe">${array[3]}</p>
+                    <button type="submit" class="restartButton button">Restart</button>
+            </section>
+        </section> 
+</main>
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+    <script src="main.js"></script>
+    </body>
+</html>
