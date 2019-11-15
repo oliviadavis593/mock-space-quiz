@@ -66,9 +66,9 @@ const STORE = [
         question: 'How many Earths could fit inside the Sun?',
         answers: [
             '10 million',
-            500,000,
+            '500,000',
             '1 million',
-            200,000
+            '200,000'
         ],
         correctAnswer: 
         '1 million'
@@ -93,8 +93,8 @@ let questionNumber = 0;
 
 // updates the question number 
 function updateQuestionNumber() {
-    questionNumber += 1;
-    $('.questionNumber').text('.questionNumber' + 1)
+    questionNumber++;
+    $('.questionNumber').text(questionNumber + 1)
 }
 
 // updates the score increments of 2
@@ -180,7 +180,7 @@ function correctAnswer() {
         `<img class="goodjob-gif" src="https://media.giphy.com/media/wue4QtxncWuE8/giphy.gif" alt="Sailor Moon well done gif">
         <h3>Brilliant!</h3>
         <p class="sizeMe">You are brighter than a star!</p>
-        <button id="js-next-button">Next</button>`
+        <button type="button" class="nextButton button">Next</button>`
     );
     updateScore();
 }
@@ -211,47 +211,54 @@ function nextQuestion() {
 //final score and final feedback for the entirety of the quiz
 
 function finalScore() {
-        $('.final').show();
-      
-        const amazing = [
-          'You are so smart!',
-          'https://media.giphy.com/media/3NtY188QaxDdC/giphy.gif'
-        ];
-      
-        const okay = [
-          'https://media.giphy.com/media/K5wSiAo98f2xi/giphy.gif'
-        ];
-      
-        const terrible = [
-          'https://media.giphy.com/media/RK9RkBogLtxmvOaKrV/giphy.gif', 
-        ];
-      
-        if (score === 7) {
-          array = amazing;
-        } else if (score < 7 && score >= 5) {
-          array = ok;
-        } else {
-          array = terrible;
-        }
-        return $('.final').html(
-          `<h3>${array[0]}</h3>
-            <img src="${array[1]}" alt="${array[2]}" class="images">
-              <h3>Your score is ${score} / 10</h3>
-              <p class="sizeMe">${array[3]}</p>
-              <button type="submit" class="restartButton button">Restart</button>`
-        );
-      }
+    $('.final').show();
+  
+    const amazing = [
+      'You are so smart!',
+      'https://media.giphy.com/media/3NtY188QaxDdC/giphy.gif',
+      'I think you could be an astronaut',
+      'You know more about space than anyone!'
+    ];
+  
+    const okay = [
+      'You could do better',
+      'https://media.giphy.com/media/K5wSiAo98f2xi/giphy.gif',
+      'monkey reading a book',
+      'You should read up on space and try again'
+    ];
+  
+    const terrible = [
+      'Do you even know what monkeys look like?',
+      'https://media.giphy.com/media/RK9RkBogLtxmvOaKrV/giphy.gif',
+      'This is too funny',
+      'You could give a little bit of effort ya know?'
+    ];
+  
+    if (score >= 12) {
+      array = amazing;
+    } else if (score < 10 && score >= 8) {
+      array = okay;
+    } else {
+      array = terrible;
+    }
+    return $('.final').html(
+      `<h3>${array[0]}</h3>
+        <img src="${array[1]}" alt="${array[2]}" class="feedback-images">
+          <h3>Your score is ${score} / 14</h3>
+          <p class="sizeMe">${array[3]}</p>
+          <button type="submit" class="restartButton button">Restart</button>`
+    );
+  }
 
-      //activates restart quiz
+        //activates restart quiz
       function restartQuiz() {
-          $('.spaceBox').on('click', '.retryButton', function(event) {
-              event.preventDefault();
-              updateNumbers();
-              $('.altBox').hide();
-              $('.spaceQuiz').show();
-          });
-      }
-
+        $('.spaceBox').on('click', '.restartButton', function(event) {
+            event.preventDefault();
+            updateNumbers();
+            $('.altBox').hide();
+            $('.spaceQuiz').show();
+        });
+    } 
 
       //runs all functions
 
