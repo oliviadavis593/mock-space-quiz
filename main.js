@@ -91,13 +91,13 @@ const STORE = [
 let score = 0; 
 let questionNumber = 0; 
 
-// updates the question number in increments of 2 
+// updates the question number 
 function updateQuestionNumber() {
     questionNumber += 1;
-    $('.questionNumber').text(.questionNumber + 1)
+    $('.questionNumber').text('.questionNumber' + 1)
 }
 
-// updates the score 
+// updates the score increments of 2
 function updateScore() {
     score += 2;
     $('.score').text(score);
@@ -113,12 +113,24 @@ function updateNumbers() {
 //starts the quiz
 function startQuiz() {
     $('.altBox').hide();
-    $('.spaceQuiz').on('click', 'startButton', function(event) {
+    $('.startButton').on('click', function(event) {
         $('.spaceQuiz').hide();
         $('.questionNumber').text(1);
         $('.questionBox').show();
-        $('.questionBox').prepend(generateQuestion());
+        $('.questionBox').prepend(presentQuestion());
     });
+}
+
+//generates each question
+function presentQuestion() {
+    if(questionNumber < STORE.length) {
+        return createThing(questionNumber);
+    }
+    else {
+        $('.questionBox').hide();
+        finalScore();
+        $('.questionNumber').text(7);
+    }
 }
 
 //set the html for question form 
@@ -154,7 +166,7 @@ function submitAnswer() {
         if (answer === correct) {
         correctAnswer();
         } else {
-        wrongAnswer();
+        incorrectAnswer();
         }
     });
        
@@ -173,13 +185,13 @@ function correctAnswer() {
 
 // feedback if the answer is incorrect
 function incorrectAnswer(){
-    $('.response').html() {
+    $('.response').html(
         ` <img class="explosion-gif" src="https://media.giphy.com/media/cN34n6Ka8GrcY/giphy.gif" alt="Planet explosion gif">
         <h3>Wrong!</h3>
         <p class="sizeMe">The correct answer is:</p>
         <p class="sizeMe">${STORE[questionNumber].correctAnswer}</p>
         <button id="js-next-button">Next</button>`
-    }
+    );
 }
 
 //function that moves on to the next question
@@ -242,7 +254,7 @@ function finalScore() {
       //runs all functions
 
       function createQuiz() {
-          spaceQuiz();
+          startQuiz();
           generateQuestion();
           nextQuestion();
           restartQuiz();

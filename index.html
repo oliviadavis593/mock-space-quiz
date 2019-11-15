@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
     <head>
         <title>Space Quiz</title>
         <meta charset="utf-8">
@@ -33,14 +33,34 @@
             <!--Intro Page Section-->
         <section role="region" class="spaceBox">
             <section class="spaceQuiz box" >
-                <h1>How much do you know about space science?</h1>
+                <h1>How much do you know about space?</h1>
                 <img class="space-gif" src="https://media.giphy.com/media/3ohzAN9PzGgxpQaiM8/giphy.gif" alt="colorful space gif">
                 <button type="button" class="startButton button">Start Quiz</button>
             </section>
 
             <!--Question Section-->
-            <section class="questionBox box altBox">
-                <form>
+            <section class="questionBox box altBox"></section>
+
+           <!--Feedback section-->
+            <section class="response box altBox"></section>
+
+            <!--Final Result Section-->
+            <section class="final box altBox"></section>
+        </section> 
+</main>
+
+<script
+src="https://code.jquery.com/jquery-3.4.1.min.js"
+integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+crossorigin="anonymous"></script>
+    <script src="main.js"></script>
+    </body>
+</html>
+
+
+<!--
+    //Question Section (Original)
+    <form>
                     <fieldset>
                         <legend class="questionText"></legend>
                             <label class="sizeMe" for="0">
@@ -61,39 +81,22 @@
                             </label>
                         <button type="submit" class="submitButton button">Submit</button>
                     </fieldset>
-                </form> 
-            </section>
-
-            <!--Correct Answer Feedback page-->
-            <section class="response box altBox" >
+                </form>
+                
+                //Correct Answer Box
+                <section class="response box altBox" >
                 <img class="goodjob-gif" src="https://media.giphy.com/media/wue4QtxncWuE8/giphy.gif" alt="Sailor Moon well done gif">
                 <h3>Brilliant!</h3>
                 <p class="sizeMe">You are brighter than a star!</p>
-                <button id="js-next-button">Next</button>
-                 
+                <button id="js-next-button">Next</button>  
             </section>
 
-            <!--Incorrect Answer Feedback page-->
+          Incorrect Answer Box 
             <section class="response box altBox">
-                <img class="explosion-gif" src="https://media.giphy.com/media/cN34n6Ka8GrcY/giphy.gif" alt="Planet explosion gif">
-                <h3>Wrong!</h3>
-                <p class="sizeMe">The correct answer is:</p>
-                <p class="sizeMe"></p>
-                <button id="js-next-button">Next</button>
-                
-            </section>
-
-            <!--Final Results Section-->
-            <section class="final box altBox" style>
-                    <h3></h3>
-                    <img src="${array[1]}" alt="${array[2]}" class="images">
-                    <h3>Your score is ${score} / 10</h3>
-                    <p class="sizeMe">${array[3]}</p>
-                    <button type="submit" class="restartButton button">Restart</button>
-            </section>
-        </section> 
-</main>
-    <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
-    <script src="main.js"></script>
-    </body>
-</html>
+                    <img class="explosion-gif" src="https://media.giphy.com/media/cN34n6Ka8GrcY/giphy.gif" alt="Planet explosion gif">
+                    <h3>Wrong!</h3>
+                    <p class="sizeMe">The correct answer is:</p>
+                    <p class="sizeMe"></p>
+                    <button id="js-next-button">Next</button>
+                </section>
+-->
