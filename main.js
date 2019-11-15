@@ -121,6 +121,7 @@ function startQuiz() {
     });
 }
 
+
 //generates each question
 function presentQuestion() {
     if(questionNumber < STORE.length) {
@@ -133,15 +134,16 @@ function presentQuestion() {
     }
 }
 
+
 //set the html for question form 
-function createForm(questionIndex) {
+function createThing(questionIndex) {
     let formCreator = $(`<form>
     <fieldset>
       <legend class="questionText">${STORE[questionIndex].question}</legend>
     </fieldset>
   </form>`)
 
-  let fieldSelector = $(formMaker).find('fieldset');
+  let fieldSelector = $(formCreator).find('fieldset');
 
   STORE[questionIndex].answers.forEach(function (answerValue, answerIndex) {
     $(`<label class="sizeMe" for="${answerIndex}">
@@ -186,11 +188,11 @@ function correctAnswer() {
 // feedback if the answer is incorrect
 function incorrectAnswer(){
     $('.response').html(
-        ` <img class="explosion-gif" src="https://media.giphy.com/media/cN34n6Ka8GrcY/giphy.gif" alt="Planet explosion gif">
+        `<img class="explosion-gif" src="https://media.giphy.com/media/cN34n6Ka8GrcY/giphy.gif" alt="Planet explosion gif">
         <h3>Wrong!</h3>
         <p class="sizeMe">The correct answer is:</p>
         <p class="sizeMe">${STORE[questionNumber].correctAnswer}</p>
-        <button id="js-next-button">Next</button>`
+        <button type="button" class="nextButton button">Next</button>`
     );
 }
 
@@ -201,7 +203,7 @@ function nextQuestion() {
         $('.altBox').hide();
         $('.questionBox').show();
         updateQuestionNumber();
-        $('.questionBox form').replaceWith(generateQuestion());
+        $('.questionBox form').replaceWith(presentQuestion());
     });
 }
 
@@ -255,9 +257,9 @@ function finalScore() {
 
       function createQuiz() {
           startQuiz();
-          generateQuestion();
+          presentQuestion();
+          submitAnswer();
           nextQuestion();
           restartQuiz();
-          submitAnswer();
       }
       $(createQuiz);
