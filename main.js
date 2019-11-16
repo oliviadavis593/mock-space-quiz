@@ -118,7 +118,7 @@ function startQuiz() {
         $('.spaceQuiz').hide();
         $('.questionNumber').text(1);
         $('.questionBox').show();
-        $('.questionBox').prepend(presentQuestion());
+        $('.questionBox').html(presentQuestion());
     });
 }
 
@@ -226,7 +226,7 @@ function finalScore() {
     ];
   
     const terrible = [
-      'Did you know anything about space?',
+      'Do you know anything about space?',
       'https://media.giphy.com/media/RK9RkBogLtxmvOaKrV/giphy.gif',
       'This is too funny'
     ];
@@ -239,8 +239,7 @@ function finalScore() {
       array = terrible;
     }
     return $('.final').html(
-      `
-      <h3 class="result-feedback">${array[0]}</h3>
+      `<h3 class="result-feedback">${array[0]}</h3>
         <img src="${array[1]}" alt="${array[2]}" class="feedback-images">
           <h3 class="final-score">Your score is: ${score} / 14</h3>
           <button type="submit" class="restartButton button">Restart</button>`
