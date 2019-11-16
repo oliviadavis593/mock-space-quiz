@@ -106,6 +106,7 @@ function updateScore() {
 //resets the number value of the score and questionNumber variables to update to correct value
 function updateNumbers() {
     score = 0; 
+    questionNumber = 0; 
     $('.score').text(0);
     $('.questionNumber').text(0);
 }
@@ -146,7 +147,7 @@ function createThing(questionIndex) {
   let fieldSelector = $(formCreator).find('fieldset');
 
   STORE[questionIndex].answers.forEach(function (answerValue, answerIndex) {
-    $(`<label class="sizeMe" for="${answerIndex}">
+    $(`<label class="input-container" for="${answerIndex}">
         <input class="radio" type="radio" id="${answerIndex}" value="${answerValue}" name="answer" required>
         <span>${answerValue}</span>
       </label>
@@ -179,7 +180,7 @@ function correctAnswer() {
     $('.response').html(
         `<img class="goodjob-gif" src="https://media.giphy.com/media/wue4QtxncWuE8/giphy.gif" alt="Sailor Moon well done gif">
         <h3>Brilliant!</h3>
-        <p class="sizeMe">You are brighter than a star!</p>
+        <p class="sizeMe feedback-text">You are brighter than a star!</p>
         <button type="button" class="nextButton button">Next</button>`
     );
     updateScore();
@@ -190,8 +191,7 @@ function incorrectAnswer(){
     $('.response').html(
         `<img class="explosion-gif" src="https://media.giphy.com/media/cN34n6Ka8GrcY/giphy.gif" alt="Planet explosion gif">
         <h3>Wrong!</h3>
-        <p class="sizeMe">The correct answer is:</p>
-        <p class="sizeMe">${STORE[questionNumber].correctAnswer}</p>
+        <p class="incorrect-response">The correct answer is: ${STORE[questionNumber].correctAnswer}</p>
         <button type="button" class="nextButton button">Next</button>`
     );
 }
@@ -217,21 +217,18 @@ function finalScore() {
       'You are so smart!',
       'https://media.giphy.com/media/3NtY188QaxDdC/giphy.gif',
       'I think you could be an astronaut',
-      'You know more about space than anyone!'
     ];
   
     const okay = [
       'You could do better',
       'https://media.giphy.com/media/K5wSiAo98f2xi/giphy.gif',
       'monkey reading a book',
-      'You should read up on space and try again'
     ];
   
     const terrible = [
-      'Do you even know what monkeys look like?',
+      'Did you know anything about space?',
       'https://media.giphy.com/media/RK9RkBogLtxmvOaKrV/giphy.gif',
-      'This is too funny',
-      'You could give a little bit of effort ya know?'
+      'This is too funny'
     ];
   
     if (score >= 12) {
@@ -242,10 +239,10 @@ function finalScore() {
       array = terrible;
     }
     return $('.final').html(
-      `<h3>${array[0]}</h3>
+      `
+      <h3 class="result-feedback">${array[0]}</h3>
         <img src="${array[1]}" alt="${array[2]}" class="feedback-images">
-          <h3>Your score is ${score} / 14</h3>
-          <p class="sizeMe">${array[3]}</p>
+          <h3 class="final-score">Your score is: ${score} / 14</h3>
           <button type="submit" class="restartButton button">Restart</button>`
     );
   }
@@ -257,6 +254,7 @@ function finalScore() {
             updateNumbers();
             $('.altBox').hide();
             $('.spaceQuiz').show();
+            startQuiz();
         });
     } 
 

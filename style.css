@@ -3,6 +3,7 @@
 }
 
 body {
+    font-family: 'Bebas Neue', cursive;
     background: url(images/space-background.jpg) no-repeat center center fixed;
     -webkit-background-size: cover;
     -moz-background-size: cover;
@@ -10,23 +11,173 @@ body {
     background-size: cover;
 }
 
-/*===================*/
-    /*Main Container*/
-/*===================*/
 
+/*============================*/
+    /*Reusable Code*/
+/*============================*/
+
+/*Main container*/
 .box{
-    border: 1px solid #fff;
-    width: 700px;
-    height: 700px;
+    background-color: #821212 ;
+    border: 1px solid #fff; 
+    width: 360px;
+    height: 400px;
+    margin: 0 auto;
 }
+
+/*Logo*/
+.space-logo {
+    width: 150px;
+    height: 150px;
+    margin-left: 35% 
+}
+
+/*For all buttons*/
+.button {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 150px;
+    height: 3em;
+    cursor: pointer;
+    text-transform: uppercase;
+    border: 0.1em #fff solid;
+    background-color: #db1f1f;
+    color: #ffffff;
+    font-weight: bold;
+  }
+
+  /*Hovering over buttons*/
+.button:hover, 
+.button:active {
+    background-color: #731010;
+    border: 0.1em #731010 solid;
+}
+
+
+/*Score and Question number*/
+.score, 
+.questionNumber {
+    color: #fff;
+}
+
+.sizeMe {
+    color: #fff;
+    list-style: none;
+    margin-left: 35%;
+    font-size: 30px;
+}
+
+
+
+
+/*============================*/
+    /*Intro page*/
+/*============================*/
+
+
 
 .space-gif {
     border: 1px solid #fff;
-    width: 450px;
-    height: 450px;
+    width: 200px;
+    height: 200px;
+    margin-left: 23%;
+    border-radius: 5px;
 }
 
 h1 {
-    font-size: 35px;
+    font-size: 20px;
     color: #fff;
+    text-align: center;
+}
+
+/*=========================*/
+    /*Question Section*/
+/*=========================*/
+
+.questionBox {
+    width: 400px;
+    padding: 40px;
+    border-radius: 3px;
+    margin: 0 auto; 
+}
+.questionText  {
+    color: #fff;
+    font-size: 20px;
+}
+
+  .input-container {
+    color: #fff;
+    display: block;
+    margin-bottom: 0.5em;
+    padding: 0.5em;
+    cursor: pointer;
+  }
+
+  fieldset {
+      border: none;
+      font-size: 20px;
+  }
+
+
+/*=========================*/
+    /*Response Section*/
+/*=========================*/
+
+.goodjob-gif, 
+.explosion-gif {
+    border: 1px solid #fff;
+    width: 250px;
+    height: 250px;
+    margin-left: 20%;
+    margin-top: 20px;
+    border-radius: 5px;
+}
+
+.response {
+    width: 400px;
+    height: 500px;
+}
+
+
+h3 {
+    margin-left: 40%;
+    font-size: 25px;
+    color: #fff;
+}
+
+.feedback-text {
+    text-align: center;
+    margin-left: 30px;
+}
+
+.incorrect-response {
+    color: #fff;
+    font-size: 25px;
+    margin-left: 80px;
+}
+
+/*=========================*/
+    /*Final Section*/
+/*=========================*/
+
+.final {
+    width: 400px;
+    height: 500px;
+}
+
+.result-feedback {
+    font-size: 20px;
+}
+
+.feedback-images {
+    border: 1px solid #fff;
+    width: 200px;
+    height: 200px;
+    margin-left: 23%;
+    border-radius: 5px;
+}
+
+.final-score h3 {
+    margin-right: 80px;
 }
