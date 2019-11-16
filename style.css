@@ -2,6 +2,8 @@
     box-sizing: border-box;
 }
 
+
+
 body {
     font-family: 'Bebas Neue', cursive;
     background: url(images/space-background.jpg) no-repeat center center fixed;
@@ -20,16 +22,22 @@ body {
 .box{
     background-color: #821212 ;
     border: 1px solid #fff; 
-    width: 360px;
-    height: 400px;
+    width: 300px;
+    height: 300px;
     margin: 0 auto;
 }
+
+/*Header Content*/
 
 /*Logo*/
 .space-logo {
     width: 150px;
     height: 150px;
     margin-left: 35% 
+}
+
+header {
+    margin: 0 auto;
 }
 
 /*For all buttons*/
@@ -45,6 +53,7 @@ body {
     background-color: #db1f1f;
     color: #ffffff;
     font-weight: bold;
+    border-radius: 5px;
   }
 
   /*Hovering over buttons*/
@@ -60,6 +69,8 @@ body {
 .questionNumber {
     color: #fff;
 }
+
+
 
 .sizeMe {
     color: #fff;
@@ -79,8 +90,8 @@ body {
 
 .space-gif {
     border: 1px solid #fff;
-    width: 200px;
-    height: 200px;
+    width: 155px;
+    height: 150px;
     margin-left: 23%;
     border-radius: 5px;
 }
@@ -91,12 +102,22 @@ h1 {
     text-align: center;
 }
 
+section .results-container { /*Fixes layout issues with the scoring and question number*/
+    display: flex;
+    flex-direction: row;
+    margin-right: 200px;
+}
+section .results-container span {
+    margin-left: 20px;
+}
+
 /*=========================*/
     /*Question Section*/
 /*=========================*/
 
 .questionBox {
-    width: 400px;
+    width: 300px;
+    height: 400px;
     padding: 40px;
     border-radius: 3px;
     margin: 0 auto; 
@@ -127,21 +148,21 @@ h1 {
 .goodjob-gif, 
 .explosion-gif {
     border: 1px solid #fff;
-    width: 250px;
-    height: 250px;
+    width: 205px;
+    height: 200px;
     margin-left: 20%;
     margin-top: 20px;
     border-radius: 5px;
 }
 
 .response {
-    width: 400px;
+    width: 300px;
     height: 500px;
 }
 
 
 h3 {
-    margin-left: 40%;
+    margin-left: 30%;
     font-size: 25px;
     color: #fff;
 }
@@ -162,22 +183,403 @@ h3 {
 /*=========================*/
 
 .final {
-    width: 400px;
-    height: 500px;
+    width: 300px;
+    height: 450px;
 }
 
-.result-feedback {
-    font-size: 20px;
+.result-feedback{
+    font-size: 17px;
+    display: inline-block; 
 }
 
 .feedback-images {
     border: 1px solid #fff;
     width: 200px;
     height: 200px;
-    margin-left: 23%;
+    margin-left: 15%;
     border-radius: 5px;
 }
 
 .final-score h3 {
     margin-right: 80px;
+}
+
+
+
+/*=========================*/
+    /*Media Queries*/
+/*=========================*/
+
+@media only screen and (min-width: 550px) {
+    
+    /*==============*/
+    /*Reusable Code*/
+    /*==============*/
+    .button {
+        width: 250px;
+        margin-top: 10px;
+    }
+    
+    /*Intro Page*/
+    
+    main {
+        height: 105vh;
+    }
+    .space-box {
+        margin-bottom: 30px;
+    }
+    .space-logo {
+        width: 200px;
+        height: 220px;
+        margin-bottom: 30px;
+    }
+
+    section .results-container { /*Fixes layout issues with the scoring and question number*/
+        display: flex;
+        flex-direction: row;
+        margin-right: 200px;
+    }
+    section .results-container span {
+        margin-left: 20px;
+    }
+
+    .box {
+        width: 500px;
+        height: 460px;
+    }
+    .space-gif  {
+        width: 300px;
+        height: 300px;
+    }
+
+    /*Question Section*/    
+    .submitButton {
+        margin-top: 35px;
+    }
+
+    /*Response/Feedback Section*/
+
+    .goodjob-gif, 
+    .explosion-gif {
+    border: 1px solid #fff;
+    width: 270px;
+    height: 270px;
+    margin-left: 25%;
+    margin-top: 20px;
+    border-radius: 5px;
+
+    }
+
+    .response {
+        height: 500px;
+    }
+    .response .box {
+        height: 115vh;
+    }
+
+    .response h3 {
+      margin-left: 210px;  
+    }
+
+    /*Final Section*/
+
+
+    .final h3 {
+        font-size: 25px;
+        margin-left: 155px;
+    }
+
+    .feedback-images {
+    width: 280px;
+    height: 270px;
+    margin-left: 100px;
+    }
+
+     .final {
+        height: 510px;
+    }
+
+}
+
+@media only screen and (min-width: 800px) {
+    
+    /*Intro Section*/
+
+    main {
+        height: 120vh;
+    }
+
+    header {
+        margin-right: 70px;
+    }
+    .space-logo {
+        width: 200px;
+        height: 220px;
+        margin-bottom: 30px;
+        margin-top: 60px;
+        margin-left: 310px;
+    }
+
+    .results-container li {
+        font-size: 45px;
+       
+    }
+    section .results-container { /*Fixes layout issues with the scoring and question number*/
+        display: flex;
+        flex-direction: row;
+        margin-right: 200px;
+    }
+    section .results-container span {
+        margin-left: 20px;
+    }
+
+
+    .box {
+        width: 650px;
+        height: 650px;
+    } 
+
+     h1 {
+        font-size: 45px;
+    }
+    .space-gif  {
+        width: 410px;
+        height: 410px;
+    }
+
+    .startButton {
+        height: 50px;
+        width: 180px;
+        font-size: 20px;
+    }
+
+    /*Question Section*/    
+    .submitButton,
+    .nextButton {
+        margin-top: 40px;
+        height: 50px;
+        width: 180px;
+        font-size: 20px;
+    }
+
+    .questionText {
+        font-size: 35px;
+    }
+
+    .input-container {
+        font-size: 30px;
+    }
+    /*Response/Feedback Section*/
+
+    .goodjob-gif, 
+    .explosion-gif {
+    border: 1px solid #fff;
+    width: 400px;
+    height: 400px;
+    margin-left: 20%;
+    margin-top: 20px;
+    border-radius: 5px;
+
+    }
+
+    .response {
+        height: 70vh;
+    }
+    .response .box {
+        height: 120vh;
+    }
+
+    .response h3 {
+      margin-left: 210px; 
+      font-size: 35px; 
+    }
+
+    /*Final Section*/
+
+
+    .final h3 {
+        font-size: 35px;
+        margin-left: 155px;
+    }
+
+    .feedback-images {
+    width: 400px;
+    height: 400px;
+    margin-left: 20%;
+    }
+
+    .final-score {
+        font-size: 35px;
+        margin-left: 150px;
+    }
+
+     .final {
+        height: 70vh;
+    }
+
+}
+
+@media only screen and (min-width: 1024px) {
+    /*Intro Section*/
+    .space-logo {
+        width: 200px;
+        height: 220px;
+        margin-bottom: 30px;
+        margin-top: 60px;
+        margin-left: 570px;
+    }
+
+    /*question, feedback, and result box*/
+    .final, 
+    .response {
+        height: 55vh;
+    }
+
+    /*Buttons*/
+
+    .button {
+        height: 50px;
+        width: 150px;
+    }
+}
+
+
+@media only screen and (min-width: 1920px) {
+     /*Intro Section*/
+
+     main {
+        height: 110vh;
+    }
+
+    header {
+        margin-right: 70px;
+    }
+    .space-logo {
+        width: 420px;
+        height: 440px;
+        margin-bottom: 30px;
+        margin-top: 60px;
+        margin-left: 750px;
+    }
+
+    .results-container li  {
+        font-size: 80px;
+        margin-right: 250px;
+       
+    }
+
+    
+    section .results-container { /*Fixes layout issues with the scoring and question number*/
+        display: flex;
+        flex-direction: row;
+        margin-right: 200px;
+    }
+    section .results-container span {
+        margin-left: 20px;
+    }
+
+
+    .box {
+        width: 1120px;
+        height: 1200px;
+    } 
+
+     h1 {
+        font-size: 70px;
+    }
+    .space-gif  {
+        width: 710px;
+        height: 710px;
+    }
+
+    .startButton {
+        height: 100px;
+        width: 280px;
+        font-size: 35px;
+    }
+
+    /*Question Section*/    
+    .submitButton,
+    .nextButton,
+    .restartButton {
+        margin-top: 80px;
+        height: 100px;
+        width: 280px;
+        font-size: 35px;
+    }
+
+    .questionText {
+        font-size: 70px;
+    }
+
+    .radio {
+        width: 40px;
+        height: 40px;
+    }
+
+    .input-container {
+        font-size: 60px;
+    }
+    /*Response/Feedback Section*/
+
+    .goodjob-gif, 
+    .explosion-gif {
+    border: 1px solid #fff;
+    width: 680px;
+    height: 680px;
+    margin-left: 20%;
+    margin-top: 20px;
+    border-radius: 5px;
+
+    }
+
+    .response {
+        height: 62vh;
+    }
+    .response .box {
+        height: 80vh;
+    }
+
+    .feedback-text {
+        font-size: 70px;
+        margin-left: 100px;
+    }
+    .response h3 {
+      margin-left: 380px; 
+      font-size: 72px; 
+    }
+
+    .response h3 {
+        font-size: 70px; 
+    }
+
+    .incorrect-response {
+        font-size: 70px;
+    }
+
+    /*Final Section*/
+
+
+    .final h3 {
+        font-size: 70px;
+        margin-left: 155px;
+    }
+
+    .feedback-images {
+    width: 680px;
+    height: 680px;
+    margin-left: 20%;
+    margin-top: 20px;
+    }
+
+    .final-score {
+        font-size: 70px;
+        margin-left: 550px;
+    }
+
+     .final {
+        height: 70vh;
+    }
+
+    
 }
