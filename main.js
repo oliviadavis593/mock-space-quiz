@@ -222,7 +222,7 @@ function finalScore() {
     const okay = [
       'You could do better',
       'https://media.giphy.com/media/K5wSiAo98f2xi/giphy.gif',
-      'monkey reading a book',
+      ,
     ];
   
     const terrible = [
