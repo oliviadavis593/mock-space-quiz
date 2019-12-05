@@ -32,4 +32,4 @@
 - https://gist.github.com/oliviadavis593/121467d34e019218ce17230d49b1bb92#gistcomment-3081598
 
 # Final Product 
-- https://oliviadavis593.github.io/space-quiz/index.html
+- https://oliviadavis593.github.io/space-quiz2/
